@@ -6,11 +6,17 @@ namespace eTickets.Models
     {
         [Key]
         public int Id { get; set; }
+
         [Display(Name = "Profile Picture")]
+        [Required(ErrorMessage = "Profile Picture is Required")]
         public string ProfilePictureURL { get; set; }
+
         [Display(Name = "Full Name")]
+        [Required(ErrorMessage = "Full Name is Required")]
+        [StringLength(50, MinimumLength = 3, ErrorMessage = "Full Name must be between 3 and 50 chars")]
         public string FullName { get; set; }
-        [Display(Name = "Bio")]
+        [Required(ErrorMessage = "Biography is Required")]
+        [Display(Name = "Biography")]
         public string Bio { get; set; }
 
         //Relationships
